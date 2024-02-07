@@ -12,14 +12,32 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     private String employeeName;
-    private String emloyeeEmail;
+    private String employeeEmail;
     private double salary;
     private String department;
+
+
+
+
+    public Employee() {
+    }
     
+    public Employee(int employeeId, String employeeName, String employeeEmail, double salary, String department) {
+        this.employeeId = employeeId;
+        this.employeeName = employeeName;
+        this.employeeEmail = employeeEmail;
+        this.salary = salary;
+        this.department = department;
+    }
+    
+
+
+
     public int getEmployeeId() {
         return employeeId;
     }
-    public void setEmployeeId(int employeeId) {
+
+   public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
     public String getEmployeeName() {
@@ -28,11 +46,11 @@ public class Employee {
     public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
     }
-    public String getEmloyeeEmail() {
-        return emloyeeEmail;
+    public String getEmployeeEmail() {
+        return employeeEmail;
     }
-    public void setEmloyeeEmail(String emloyeeEmail) {
-        this.emloyeeEmail = emloyeeEmail;
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
     }
     public double getSalary() {
         return salary;
@@ -47,8 +65,6 @@ public class Employee {
         this.department = department;
     }
 
-
     
-
     
 }

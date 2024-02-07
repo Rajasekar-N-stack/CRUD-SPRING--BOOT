@@ -14,11 +14,9 @@ public class EmployeeService {
     private EmployeeRepo empRepo;
 
     public Employee addEmployeeDetails(Employee employee){
-       try{
-        return empRepo.save(employee);
-       }catch(Exception e){
-        return null;
-       }
+        empRepo.save(employee);
+        return employee;
+       
     }
     
 }

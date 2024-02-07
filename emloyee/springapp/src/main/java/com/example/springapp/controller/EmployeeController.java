@@ -10,14 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.springapp.model.Employee;
 import com.example.springapp.service.EmployeeService;
 
-@RequestMapping("/api")
 @RestController
 public class EmployeeController {
 
     @Autowired
     private EmployeeService empservice;
 
-    @PostMapping("/employee")
+    @PostMapping("/api/employee")
     public ResponseEntity<Employee> addEmployeeDetails(Employee employee){
        Employee added =  empservice.addEmployeeDetails(employee);
        if(added!=null ){
