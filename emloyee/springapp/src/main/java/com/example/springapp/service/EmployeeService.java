@@ -1,5 +1,7 @@
 package com.example.springapp.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
@@ -21,9 +23,12 @@ public class EmployeeService {
     }
 
 
-    public Employee updateEmployee(Employee employee,int employeeId){
-        empRepo.save(employee,employeez
-        return 
+    public Optional<Employee> getemployeebyid(int employeeId){
+        return empRepo.findById(employeeId);
+    }
+
+    public Employee Updateemployee(Employee employee , int employeeId){
+       Employee  empRepo.save(employee,employeeId);
     }
     
 }
