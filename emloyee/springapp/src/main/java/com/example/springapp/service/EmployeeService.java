@@ -34,6 +34,12 @@ public class EmployeeService {
         return empRepo.save(employee2);
     }
 
+    public boolean deleteemployee(int employeeId){
+        empRepo.deleteById(employeeId);
+        return true;
+    }
+    
+
     
     
 }

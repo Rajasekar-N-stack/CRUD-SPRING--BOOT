@@ -46,7 +46,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'Engineering',NULL,'Raj',50),(2,'Engineering','john.doe@example.com','Raj',50),(3,'Engineering','john.doe@example.com','prasant',50),(4,'Engineering','john.doe@example.com','prasant',50),(5,'Engineering','john.doe@example.com','prasant',50),(6,'Engineering','john.doe@example.com','prasant',50),(7,'Engineering','john.doe@example.com','prasant',50),(8,'Engineering','john.doe@example.com','prasant',500),(9,'Engineering','john.doe@example.com','prasant',500);
+INSERT INTO `employee` VALUES (1,'Engineering',NULL,'Raj',50),(2,'Engineering','john.doe@example.com','Raj',50),(3,'Engineering','john.doe@example.com','prasant',50),(4,'Engineering','john.doe@example.com','prasant',50),(6,'Engineering','prasant@example.com','prasant',50),(7,'Engineering','john.doe@example.com','prasant',50),(8,'Engineering','john.doe@example.com','prasant',500),(9,'Engineering','john.doe@example.com','prasant',500);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-07  8:56:40
+-- Dump completed on 2024-02-07  9:12:25

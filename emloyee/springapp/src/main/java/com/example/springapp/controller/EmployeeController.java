@@ -5,6 +5,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,11 +41,15 @@ public class EmployeeController {
         return empservice.getemployeebyid(employeeId);
     }
 
-    @PutMapping("/{Id}")
-    public Product updateShirt(@RequestBody Product product, @PathVariable int Id) {
-        return apiService.updateproduct(product, Id);
+    @PutMapping("/api/employee/{employeeId}")
+    public Employee updateShirt(@RequestBody Employee employee, @PathVariable int employeeId) {
+        return empservice.updateproduct(employee, employeeId);
     }
 
+    @DeleteMapping("/api/employee/{employeeId}")
+    public boolean deleteemployee(@PathVariable int employeeId){
+        return empservice.deleteemployee(employeeId);
+    }
 
 
 
