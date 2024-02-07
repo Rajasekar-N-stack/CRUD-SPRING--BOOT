@@ -35,8 +35,12 @@ public class EmployeeService {
     }
 
     public boolean deleteemployee(int employeeId){
-        empRepo.deleteById(employeeId);
+        if(empRepo.existsById(employeeId)){
+            empRepo.deleteById(employeeId);
         return true;
+        }else{
+            return false;
+        }
     }
     
 
