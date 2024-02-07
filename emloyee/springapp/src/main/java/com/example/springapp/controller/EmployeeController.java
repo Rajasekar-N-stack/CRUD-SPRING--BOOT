@@ -40,14 +40,9 @@ public class EmployeeController {
         return empservice.getemployeebyid(employeeId);
     }
 
-    @PutMapping("/api/employee/{employeeId}")
-    public ResponseEntity<Employee> updateemployee(@RequestBody Employee employee,@PathVariable int employeeId){
-        Employee u = empservice.updateemployeebyId(employee, employeeId);
-        if(u != null){
-            return new ResponseEntity<>(u, HttpStatus.OK);
-        }else{
-            return new ResponseEntity<>(u, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    @PutMapping("/{Id}")
+    public Product updateShirt(@RequestBody Product product, @PathVariable int Id) {
+        return apiService.updateproduct(product, Id);
     }
 
 

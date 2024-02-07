@@ -26,14 +26,12 @@ public class EmployeeService {
         return empRepo.findById(employeeId);
     }
 
-    
 
-    public Employee updateemployeebyId(Employee employee , int employeeId){
-        if(empRepo.existsById(employeeId)){
-            empRepo.save(employee);
-            return employee;
-        }
-        return null;
+
+    public Employee updateproduct(Employee employee, int employeeId) {
+        Employee employee2 = empRepo.findById(employeeId).get();
+        employee2.setEmployeeEmail(employee.getEmployeeEmail());
+        return empRepo.save(employee2);
     }
 
     
