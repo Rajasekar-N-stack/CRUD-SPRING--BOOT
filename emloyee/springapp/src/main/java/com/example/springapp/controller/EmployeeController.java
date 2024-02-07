@@ -1,6 +1,7 @@
 package com.example.springapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +19,12 @@ public class EmployeeController {
 
     @PostMapping("/employee")
     public ResponseEntity<Employee> addEmployeeDetails(Employee employee){
-        return empservice.addEmployeeDetails(employee);
+       Employee added =  empservice.addEmployeeDetails(employee);
+       if(added!=null ){
+         return new ResponseEntity<>(employee , HttpStatus.CREATED);
+       }else{
+        return new ResponseEntity<>(employee , HttpStatus.INTERNAL_SERVER_ERROR);
+       }
     }
 
 
