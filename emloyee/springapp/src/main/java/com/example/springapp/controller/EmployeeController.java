@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,12 +18,12 @@ public class EmployeeController {
     private EmployeeService empservice;
 
     @PostMapping("/api/employee")
-    public ResponseEntity<Employee> addEmployeeDetails(Employee employee){
+    public ResponseEntity<Employee> addEmployeeDetails(@RequestBody Employee employee){
        Employee added =  empservice.addEmployeeDetails(employee);
        if(added!=null){
-         return ResponseEntity.ok(added);
+         return  new ResponseEntity<>(added , HttpStatus.CREATED);
        }else{
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+        return new  ResponseEntity<>(added , HttpStatus.INTERNAL_SERVER_ERROR);
        }
 
 

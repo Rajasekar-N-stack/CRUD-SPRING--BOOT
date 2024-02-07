@@ -19,5 +19,11 @@ public class EmployeeService {
         
        
     }
+
+
+    public Employee updateEmployee(Employee employee,int employeeId){
+        empRepo.save(employee,employeez
+        return 
+    }
     
 }
