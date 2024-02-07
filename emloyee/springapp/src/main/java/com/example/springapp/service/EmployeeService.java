@@ -22,13 +22,20 @@ public class EmployeeService {
        
     }
 
-
     public Optional<Employee> getemployeebyid(int employeeId){
         return empRepo.findById(employeeId);
     }
 
-    public Employee Updateemployee(Employee employee , int employeeId){
-       Employee  empRepo.save(employee,employeeId);
+    
+
+    public Employee updateemployeebyId(Employee employee , int employeeId){
+        if(empRepo.existsById(employeeId)){
+            empRepo.save(employee);
+            return employee;
+        }
+        return null;
     }
+
+    
     
 }

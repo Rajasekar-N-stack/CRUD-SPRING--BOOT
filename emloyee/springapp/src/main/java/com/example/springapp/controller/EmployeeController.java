@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +39,18 @@ public class EmployeeController {
     public Optional<Employee> getbyemployeeid(@PathVariable int employeeId){
         return empservice.getemployeebyid(employeeId);
     }
+
+    @PutMapping("/api/employee/{employeeId}")
+    public ResponseEntity<Employee> updateemployee(@RequestBody Employee employee,@PathVariable int employeeId){
+        Employee u = empservice.updateemployeebyId(employee, employeeId);
+        if(u != null){
+            return new ResponseEntity<>(u, HttpStatus.OK);
+        }else{
+            return new ResponseEntity<>(u, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
 
     

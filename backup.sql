@@ -37,7 +37,7 @@ CREATE TABLE `employee` (
   `employee_name` varchar(255) DEFAULT NULL,
   `salary` double NOT NULL,
   PRIMARY KEY (`employee_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +46,7 @@ CREATE TABLE `employee` (
 
 LOCK TABLES `employee` WRITE;
 /*!40000 ALTER TABLE `employee` DISABLE KEYS */;
-INSERT INTO `employee` VALUES (1,'Engineering',NULL,'Raj',50),(2,'Engineering','john.doe@example.com','Raj',50);
+INSERT INTO `employee` VALUES (1,'Engineering',NULL,'Raj',50),(2,'Engineering','john.doe@example.com','Raj',50),(3,'Engineering','john.doe@example.com','prasant',50),(4,'Engineering','john.doe@example.com','prasant',50),(5,'Engineering','john.doe@example.com','prasant',50),(6,'Engineering','john.doe@example.com','prasant',50),(7,'Engineering','john.doe@example.com','prasant',50),(8,'Engineering','john.doe@example.com','prasant',500);
 /*!40000 ALTER TABLE `employee` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +59,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-02-07  7:50:27
+-- Dump completed on 2024-02-07  8:27:31
