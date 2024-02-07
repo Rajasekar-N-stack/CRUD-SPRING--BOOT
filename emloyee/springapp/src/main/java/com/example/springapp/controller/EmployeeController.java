@@ -19,11 +19,13 @@ public class EmployeeController {
     @PostMapping("/api/employee")
     public ResponseEntity<Employee> addEmployeeDetails(Employee employee){
        Employee added =  empservice.addEmployeeDetails(employee);
-       if(added!=null ){
-         return new ResponseEntity<>(employee , HttpStatus.CREATED);
+       if(added!=null){
+         return ResponseEntity.ok(added);
        }else{
-        return new ResponseEntity<>(employee , HttpStatus.INTERNAL_SERVER_ERROR);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
        }
+
+
     }
 
 

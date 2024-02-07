@@ -16,6 +16,7 @@ public class EmployeeService {
     public Employee addEmployeeDetails(Employee employee){
         empRepo.save(employee);
         return employee;
+        
        
     }
     
