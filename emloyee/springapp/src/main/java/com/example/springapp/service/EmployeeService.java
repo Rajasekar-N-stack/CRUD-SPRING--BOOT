@@ -19,9 +19,8 @@ public class EmployeeService {
        if(added != null){
         return new ResponseEntity<>(employee , HttpStatus.CREATED);
        }else{
-        return null;
+        return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
        }
-        
     }
     
 }
